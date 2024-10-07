@@ -36,24 +36,24 @@ for x, y , w, h in faces:
     i = i + 1
 
 
+#load image to search with
 file_name2 = "/content/compare-img.jpg"
-
 img2 = cv2.imread(file_name2, cv2.IMREAD_GRAYSCALE)
-
-
-
+#find faces
 faces2 = haar_cascade.detectMultiScale(
     gray_img,
     scaleFactor=1.05,
     minNeighbors=2,
     minSize=(100, 100),
 )
+#load 'imgbeddings' to calculate embeddings
 ibed = imgbeddings()
 
-
+#for each face in picture
 for x, y, w, h in faces:
     cropped = img[y: y + h, x: x + w]
     if isinstance(cropped, np.ndarray):
+        #crop the image to select for face
         cropped =Image.fromarray(cropped)
-
+    #calculate the embeddings
     bron_img = ibed.to_embeddings(cropped)[0]
