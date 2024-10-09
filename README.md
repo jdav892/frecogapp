@@ -1,1 +1,1 @@
-A facial recognition app that uses OpenCV to pull faces from images, stores them in a PostgreSQL database, then compares images based on vector embedding to return matches to the console.(Working towards gui implementation)
+A facial recognition app that uses OpenCV to pull faces from images, stores them in a PostgreSQL database, then compares images based on vector embedding to return matches.(Working towards gui implementation)
